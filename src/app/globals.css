@@ -1,26 +1,27 @@
-/* This initializes the Tailwind v4 engine. */
+/* 1. CORE ENGINE INITIALIZATION */
 @import "tailwindcss";
 
-/* This is specifically for shadcn. It allows you to use classes like animate-in, fade-in, and slide-in-from-bottom directly in your HTML. */
+/* Shadcn & Animation Plugins */
 @plugin "tailwindcss-animate";
 
-@import "tw-animate-css";
-
-/* This is where we define the DNA of your school website. */
+/* @import "tw-animate-css"; */
+/* 2. THEME DEFINITION (The DNA of your School Project) */
 @theme {
-  /* Custom Colors */
-  --color-brand-deep: #020617;
-  --color-brand-accent: #3b82f6;
-  --color-future-glow: #fbbf24;
+  /* Brand Identity Colors */
+  --color-brand-deep: #1e3a8a; /* Scholar Blue: Trust and Authority */
+  --color-brand-accent: #3b82f6; /* Innovation Blue: Modern Tech Feel */
+  --color-future-glow: #f59e0b; /* Radiant Gold: The "Bright Future" Spark */
+  --color-growth-green: #10b981; /* Sage Green: Creative Development */
 
-  /* Custom Animations for your "Heavy Motion" site */
+  /* Heavy Motion Engine */
   --animate-float: float 5s ease-in-out infinite;
   --animate-pulse-slow: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
-  /* Adding a custom font scale for huge headlines */
+  /* Typography Scale */
   --font-size-hero: clamp(3rem, 10vw, 8rem);
 }
 
+/* Custom Keyframes for non-standard animations */
 @keyframes float {
   0%,
   100% {
@@ -31,7 +32,7 @@
   }
 }
 
-/* This section connects the shadcn UI components to the Tailwind v4 engine. */
+/* 3. SHADCN BRIDGE (Maps variables to Tailwind v4 classes) */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -40,6 +41,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -58,66 +60,61 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* 4. DYNAMIC COLOR PALETTE (OKLCH for High-Clarity Motion) */
 :root {
-  --radius: 0.625rem;
+  --radius: 1rem; /* Softer edges for a modern, friendly school vibe */
+
+  /* The Canvas: Pure white for maximum motion clarity */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.15 0.02 260);
+
+  /* Scholar Blue (Primary) */
+  --primary: oklch(0.4 0.15 250);
+  --primary-foreground: oklch(0.98 0.01 250);
+
+  /* Soft Scholar Blue (Secondary) */
+  --secondary: oklch(0.95 0.02 250);
+  --secondary-foreground: oklch(0.4 0.15 250);
+
+  /* The Bright Future Spark (Accent) */
+  --accent: oklch(0.82 0.17 80);
+  --accent-foreground: oklch(0.15 0.02 260);
+
+  /* UI Infrastructure */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.15 0.02 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --popover-foreground: oklch(0.15 0.02 260);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.45 0.02 250);
+  --destructive: oklch(0.6 0.2 25);
+  --border: oklch(0.92 0.01 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: oklch(0.4 0.15 250);
 }
 
+/* 5. BASE STYLES */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    /* Force light mode background */
-    @apply bg-background text-foreground;
+    /* light mode is forced here for better animation performance */
+    @apply bg-background text-foreground antialiased selection:bg-brand-accent selection:text-white;
   }
 }
-
+.cursor-grab {
+  cursor: grab;
+}
+.cursor-grabbing {
+  cursor: grabbing;
+}
+/* Prevent browser bounce on mobile drag */
+.overflow-x-hidden {
+  touch-action: pan-y;
+}
 /* we dont use dark mode becz heavy animation and motion get jitter bad  */
 /* @custom-variant dark (&:is(.dark *)); */
 /* .dark {

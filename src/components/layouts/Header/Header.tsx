@@ -1,7 +1,6 @@
 // src/components/sections/Header.tsx (Server Component)
 import Link from "next/link";
 import { HeaderClientWrapper } from "./HeaderClientWrapper";
-import { Button } from "@/components/ui/button";
 import { Home, BookOpen, GraduationCap, Users } from "lucide-react"; // Icons for mobile nav
 
 export default function Header() {
@@ -24,15 +23,6 @@ export default function Header() {
             </h1>
           </Link>
 
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="hidden md:inline-flex">
-              Login
-            </Button>
-            <Button size="sm" className="bg-primary text-white">
-              Enroll
-            </Button>
-          </div>
-
           {/* DESKTOP NAV (Hidden on Mobile) */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
@@ -48,6 +38,14 @@ export default function Header() {
               ))}
             </ul>
           </nav>
+          {/* <div className="flex  items-center gap-3">
+            <Button variant="ghost" size="sm" className="hidden md:inline-flex">
+              Login
+            </Button>
+            <Button size="sm" className="bg-primary text-white">
+              Enroll
+            </Button>
+          </div> */}
         </div>
       </header>
 

@@ -9,7 +9,7 @@ export function QuickLinksClient({ links }: { links: LinkItem[] }) {
   return (
     <nav className="flex items-center overflow-x-auto no-scrollbar md:overflow-visible py-2 px-4 gap-2 md:gap-4 md:justify-around">
       {links.map((link) => (
-        <Link key={link.id} href={link.href} className="group flex-shrink-0">
+        <Link key={link.id} href={link.href} className="group shrink-0">
           <motion.div
             initial={false}
             whileHover={{ y: -4, scale: 1.02 }}

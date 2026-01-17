@@ -13,7 +13,14 @@ export default function Home() {
   return (
     <main className="relative bg-background">
       {/* SCENE 1: The Vision */}
-      <Hero />
+      <Hero
+        videoSrc="School_Children_Using_Technology_Video.mp4"
+        titleTop="Today's Kids,"
+        titleAccent="World's Future Bright"
+        description="An immersive learning environment where technology meets empathy to shape the leaders of tomorrow."
+        primaryBtnText="Explore Campus"
+        secondaryBtnText="Watch Our Story"
+      />
       <QuickLinks />
       <BentoStats />
       <CurriculumSwipe />

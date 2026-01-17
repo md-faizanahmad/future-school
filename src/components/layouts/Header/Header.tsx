@@ -5,10 +5,10 @@ import { Home, BookOpen, GraduationCap, Users } from "lucide-react"; // Icons fo
 
 export default function Header() {
   const navLinks = [
-    { name: "Programs", href: "/programs", icon: BookOpen },
-    { name: "Innovation", href: "/innovation", icon: Users },
-    { name: "Admissions", href: "/admissions", icon: GraduationCap },
-    { name: "Our Story", href: "/story", icon: Home },
+    { name: "Programs", href: "/pages/programs", icon: BookOpen },
+    { name: "Innovation", href: "/pages/innovation", icon: Users },
+    { name: "Admissions", href: "/pages/admissions", icon: GraduationCap },
+    { name: "Our Story", href: "/pages/story", icon: Home },
   ];
 
   return (
@@ -38,14 +38,6 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          {/* <div className="flex  items-center gap-3">
-            <Button variant="ghost" size="sm" className="hidden md:inline-flex">
-              Login
-            </Button>
-            <Button size="sm" className="bg-primary text-white">
-              Enroll
-            </Button>
-          </div> */}
         </div>
       </header>
 
